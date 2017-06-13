@@ -13,22 +13,18 @@
 			
 			
 			//read
-			var txtFile = "group.txt";
-			//var file = new File(txtFile);
-
-			//file.open("r"); // open file with read access
-			//var prevGroup = file.readln();
+			var file = "group.txt";			
 			
 			var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            alert(xmlhttp.responseText);
-        }
-    }
+			xmlhttp.onreadystatechange = function () {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					prevGroup = xmlhttp.responseText;
+				}
+			}
 
-    xmlhttp.open("GET", "group.txt", true);
-    xmlhttp.send();
+			xmlhttp.open("GET", file, true);
+			xmlhttp.send();
 	 
 			/*alert(prevGroup);
 			if(prevGroup == 6)

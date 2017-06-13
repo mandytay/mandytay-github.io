@@ -20,13 +20,14 @@
 			xmlhttp.onreadystatechange = function () {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					prevGroup = xmlhttp.responseText;
+					alert(prevGroup);
 				}
 			}
 
 			xmlhttp.open("GET", file, true);
 			xmlhttp.send();
 	 
-			alert(prevGroup);
+			
 			/*if(prevGroup == 6)
 				curGroup = 1;
 			else

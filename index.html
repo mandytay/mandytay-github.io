@@ -15,17 +15,14 @@
 			//read
 			var file = "group.txt";			
 			
-			var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-
-			xmlhttp.onreadystatechange = function () {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					prevGroup = xmlhttp.responseText;
-					//alert(prevGroup);
-				}
-			}
- alert(prevGroup);
-			xmlhttp.open("GET", file, true);
-			xmlhttp.send();
+			var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", file, true);
+  xhttp.send();
 	
 			
 			/*if(prevGroup == 6)

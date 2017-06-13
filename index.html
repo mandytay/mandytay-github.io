@@ -25,14 +25,14 @@
 				curGroup = prevGroup + 1;
 			
 			file.close();
-alert(curGroup);			
+		
 
 			//write
 			file.open("w"); // open file with write access
 			file.write(curGroup);
 			file.close();
 			alert(curGroup);
-			
+			/*
 			switch (curGroup)
             {
                case 1: link = "http://www.tutorialspoint.com";
@@ -50,7 +50,7 @@ alert(curGroup);
             }
 			
 			
-            window.location=link;
+            window.location=link;*/
 			
         }
         window.onload = redirect;

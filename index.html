@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Test</title>
+        <title>Study about</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript">
 		
 		function redirect() {
 		
-			var group = 1;
+			var link = "";
+			var prevGroup = 0;
+			var curGroup = 0;			
 			
-			if( group == 0 ){
 			
-            window.location="http://www.tutorialspoint.com";}
-			else {
-			window.location="https://www.google.com";
-			}
+			//read
+			var txtFile = "group.txt"
+			var file = new File(txtFile);
+
+			file.open("r"); // open file with read access
+			var prevGroup = file.readln();
+			
+			if(prevGroup == 6)
+				curGroup = 1;
+			else
+				curGroup = prevGroup + 1;
+			
+			file.close();				
+			
+			switch (curGroup)
+            {
+               case 1: link = "http://www.tutorialspoint.com";
+			   break;
+               case 2: link = "https://www.google.com";
+			   break;
+               case 3: link = "http://www.paypal.com";
+			   break;
+               case 4: link = "http://www.ebay.com";
+			   break;
+               case 5: link = "http://www.amazon.com"; 
+			   break;
+			   case 6: link = "http://www.espn.com"; 
+			   break;
+            }
+			
+			
+            window.location=link;
+			
         }
-        window.onload = redirect;
+        window.onload = redirect();
         </script>
     </head>
     <body>

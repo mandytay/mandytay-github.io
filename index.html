@@ -4,10 +4,19 @@
         <title>Test</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript">
-        function codeAddress() {
+		
+		function redirect() {
+		
+			var group = 0;
+			
+			if( group == 0 ){
+			
             window.location="http://www.tutorialspoint.com";
+			else
+			window.location="https://www.google.com";
+			}
         }
-        window.onload = codeAddress;
+        window.onload = assignGroup();
         </script>
     </head>
     <body>

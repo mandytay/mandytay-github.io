@@ -14,10 +14,25 @@
 			
 			//read
 			var txtFile = "group.txt";
-			var file = new File(txtFile);
+			//var file = new File(txtFile);
 
-			file.open("r"); // open file with read access
-			var prevGroup = file.readln();
+			//file.open("r"); // open file with read access
+			//var prevGroup = file.readln();
+			
+			var rawFile = new XMLHttpRequest();
+     rawFile.open("GET", txtfile, false);
+     rawFile.onreadystatechange = function ()
+     {
+         if(rawFile.readyState === 4)
+         {
+             if(rawFile.status === 200 || rawFile.status == 0)
+             {
+                 prevGroup = rawFile.responseText;
+               
+             }
+         }
+     }     rawFile.send(null); 
+	 
 			alert(prevGroup);
 			if(prevGroup == 6)
 				curGroup = 1;

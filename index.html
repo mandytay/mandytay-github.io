@@ -19,28 +19,25 @@
 			//file.open("r"); // open file with read access
 			//var prevGroup = file.readln();
 			
-			var rawFile = new XMLHttpRequest();
-     rawFile.open("GET", txtfile, false);
-     rawFile.onreadystatechange = function ()
-     {
-         if(rawFile.readyState === 4)
-         {
-             if(rawFile.status === 200 || rawFile.status == 0)
-             {
-                 prevGroup = rawFile.responseText;
-               
-             }
-         }
-     }     rawFile.send(null); 
+			var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            alert(xmlhttp.responseText);
+        }
+    }
+
+    xmlhttp.open("GET", "group.txt", true);
+    xmlhttp.send();
 	 
-			alert(prevGroup);
+			/*alert(prevGroup);
 			if(prevGroup == 6)
 				curGroup = 1;
 			else
 				curGroup = prevGroup + 1;
 			
 			file.close();
-		alert(curGroup);
+		alert(curGroup);*/
 /*
 			//write
 			file.open("w"); // open file with write access

@@ -5,6 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript">
 		
+		
+		
 		function redirect() {
 		
 			var link = "";
@@ -15,14 +17,9 @@
 			//read
 			var file = "group.txt";			
 			
-			var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      prevGroup = this.responseText;
-    }
-  };
-  xhttp.open("GET", file, false);
-  xhttp.send();
+			var fso = new ActiveXObject("Scripting.FileSystemObject");
+var fh = fso.OpenTextFile(file, 1, false, 0);
+var output = fh.ReadAll();
 	
 			alert(prevGroup);
 			if(prevGroup == 6)
